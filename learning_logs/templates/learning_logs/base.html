@@ -1,0 +1,59 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width-device-width, initial-scale=1, shrink-to-fit=no"> 
+    
+    <title>Title</title>  
+
+    {% load static %}  
+    <link rel='stylesheet' href="{% static 'bootstrap/css/bootstrap.css' %}" >  
+    <script src="{% static 'bootstrap.js' %}"></script>
+
+</head>  
+<body>  
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Welcome!</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link active" aria-current="page" href="{% url 'learning_logs:index'%}">Learning Logs</a>
+                <a class="nav-link" href="{% url 'learning_logs:topics'%}">Topics</a>
+    
+                {% if user.is_authenticated %}
+                    Hello, {{ user.username }}.
+                    <a class="nav-link" href="{% url 'users:logout' %}">Log out</a>
+                {% else %}
+                    <a class="nav-link" href="{% url 'users:register' %}">Register</a>
+                    <a class="nav-link" href="{% url 'users:login' %}">Log in</a>
+                {% endif %}
+    
+            </div>
+            </div>
+        </div>
+    </nav>
+</body>  
+</html>
+
+<p>
+    <a href="{% url 'learning_logs:index'%}">
+    Learning Log</a> -  
+    <a href="{% url 'learning_logs:topics'%}">
+    Topics</a>
+
+    {% if user.is_authenticated %}
+        Hello, {{ user.username }}.
+        <a href="{% url 'users:logout' %}">Log out</a>
+    {% else %}
+        <a href="{% url 'users:register' %}">Register</a> -
+
+        <a href="{% url 'users:login' %}">Log in</a>
+    {% endif %}
+
+</p>
+    {% block content %} to be overridden
+    {% endblock content %}
+    

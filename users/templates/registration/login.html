@@ -1,0 +1,20 @@
+{% extends "learning_logs/base.html" %}
+
+{% block content %}
+    {% if form.errors %}
+        <p>Your username and password didn't match. Please try again.</p>
+    {% endif %}    
+
+    <div class="alert alert-primary" role="alert">
+        This page is styled using Bootstrap!
+    </div>
+
+    
+    <form method="post" action="{% url 'users:login' %}">
+        {% csrf_token %}
+        {{ form.as_p }}    
+        <button class="btn btn-primary" type="button" name="submit">Log in</button>
+        <input type="hidden" name="next" 
+        value={{next}} /> 
+    </form>    
+{% endblock content %}
