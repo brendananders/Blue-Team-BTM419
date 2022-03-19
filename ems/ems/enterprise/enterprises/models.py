@@ -15,7 +15,7 @@ class Claim(models.Model):
 class Inspection(models.Model):
     inspectorName = models.CharField()
     date = models.DateField()
-    approvalDate = models.DateField(blank=True)
+    approvalDate = models.DateField(blank=True, null=True)
     claim = models.ForeignKey(Claim)
 
 
