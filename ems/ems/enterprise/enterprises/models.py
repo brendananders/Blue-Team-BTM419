@@ -15,7 +15,6 @@ class Claim(models.Model):
     warranty = models.ForeignKey(Warranty)
 
 class Inspection(models.Model):
-    inspectorName = models.CharField()
     date = models.DateField()
     approvalDate = models.DateField(blank=True, null=True)
     claim = models.ForeignKey(Claim)
