@@ -23,7 +23,7 @@ class Claim(models.Model):
     status = models.CharField(
         max_length = 2,
         choices = STATUS_CHOICES,
-        default = 'AC'
+        default = 'PE'
     ) 
 
 class Inspection(models.Model):
