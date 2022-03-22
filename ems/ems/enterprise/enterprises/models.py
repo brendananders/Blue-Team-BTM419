@@ -2,10 +2,14 @@ from telnetlib import STATUS
 from django.db import models
 
 # Create your models here.
+class Dealership(models.Model):
+    name = models.CharField()
+
 class Inventory(models.Model):
     serialNumber = models.IntegerField()
     upcCode = models.IntegerField(max_length=12)
     name = models.CharField()
+    dealership = models.ForeignKey(Dealership)
 
 class Warranty(models.Model):
     inventory = models.ForeignKey(Inventory)
