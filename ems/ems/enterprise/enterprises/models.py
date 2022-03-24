@@ -19,7 +19,7 @@ class Warranty(models.Model):
     name = models.CharField(max_length=30)
 
 class Claim(models.Model):
-    dateSubmitted = models.DateField()
+    date = models.DateField()
     warranty = models.ForeignKey(Warranty)
     STATUS_CHOICES = [
         ('AP', 'Approved'),
@@ -35,6 +35,6 @@ class Claim(models.Model):
 
 class Inspection(models.Model):
     inspectorName = models.CharField(max_length=30) # stored because the form can be filled out on someone's behalf
-    submissionDate = models.DateField()
-    approvalDate = models.DateField(blank=True, null=True)
+    inspectionDate = models.DateField(blank=True, null=True)
+    dataEntryDate = models.DateField()
     claim = models.ForeignKey(Claim)
