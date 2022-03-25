@@ -32,6 +32,7 @@ class Claim(models.Model):
         choices = STATUS_CHOICES,
         default = 'PE'
     ) 
+    approvalDate = models.DateField(blank=True, null=True)
 
 class Inspection(models.Model):
     inspectorName = models.CharField(max_length=30) # stored because the form can be filled out on someone's behalf
