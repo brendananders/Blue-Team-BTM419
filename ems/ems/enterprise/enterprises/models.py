@@ -19,7 +19,7 @@ class Warranty(models.Model):
     name = models.CharField(max_length=30)
 
 class Claim(models.Model):
-    date = models.DateField()
+    claimDate = models.DateField()
     warranty = models.ForeignKey(Warranty)
     STATUS_CHOICES = [
         ('AP', 'Approved'),
