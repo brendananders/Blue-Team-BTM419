@@ -1,4 +1,5 @@
 from telnetlib import STATUS
+from tkinter import CASCADE
 from django.db import models
 
 # Create your models here.
@@ -11,16 +12,16 @@ class Inventory(models.Model):
     serialNumber = models.IntegerField(max_length=50)
     upcCode = models.IntegerField(max_length=12)
     name = models.CharField(max_length=30)
-    dealership = models.ForeignKey(Dealership)
+    dealership = models.ForeignKey(Dealership, on_delete=models.CASCADE)
 
 class Warranty(models.Model):
-    inventory = models.ForeignKey(Inventory)
+    inventory = models.ForeignKey(Inventory, on_delete=models.CASCADE)
     brand = models.CharField(max_length=30)
     name = models.CharField(max_length=30)
 
 class Claim(models.Model):
     claimDate = models.DateField()
-    warranty = models.ForeignKey(Warranty)
+    warranty = models.ForeignKey(Warranty, on_delete=models.CASCADE)
     STATUS_CHOICES = [
         ('AP', 'Approved'),
         ('RE', 'Rejected'),
@@ -38,4 +39,4 @@ class Inspection(models.Model):
     inspectorName = models.CharField(max_length=30) # stored because the form can be filled out on someone's behalf
     inspectionDate = models.DateField(blank=True, null=True)
     dataEntryDate = models.DateField()
-    claim = models.ForeignKey(Claim)
+    claim = models.ForeignKey(Claim, on_delete=models.CASCADE)

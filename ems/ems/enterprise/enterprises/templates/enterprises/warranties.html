@@ -1,0 +1,34 @@
+{% extends "enterprises/base.html" %}
+{% block content %} 
+<div class="container">
+    <div class="row">
+        <h1 style="font-weight: bold; text-align: center;">Warranties</h1>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-10"><p>search bar function will be right here:</p></div>
+        <div class="col-2"></div>   
+    </div>
+    <table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Warranty ID</th>
+            <th scope="col">Inventory ID</th>
+            <th scope="col">Brand</th>
+            <th scope="col">Name</th>
+        </tr> 
+    </thead>
+    <tbody>
+        {% for warranty in warranties %}  
+            <tr>
+                {{warranty}}
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+
+
+
+
+{% endblock content %} 

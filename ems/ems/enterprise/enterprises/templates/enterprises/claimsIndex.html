@@ -1,0 +1,41 @@
+{% extends "enterprises/base.html" %}
+{% block content %} 
+<div class="container">
+    <div class="row">
+        <h1 style="font-weight: bold; text-align: center;">Claims</h1>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-10"><p>search bar function will be right here:</p></div>
+        <div class="col-2">
+            <a href="{% url 'enterprises:newClaim' %}">
+                <button class="btn btn-outline-primary">Create New Claim</button>
+            </a>
+            
+        </div>
+        
+    </div>
+    <table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Claim ID</th>
+            <th scope="col">Claim Date</th>
+            <th scope="col">Warranty</th>
+            <th scope="col">Status</th>
+            <th scope="col">Approval Date</th>
+        </tr> 
+    </thead>
+    <tbody>
+        {% for claim in claims %}  
+            <tr>
+                {{claim}}
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+
+
+
+
+{% endblock content %} 
