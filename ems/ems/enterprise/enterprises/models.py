@@ -39,5 +39,4 @@ class Inspection(models.Model):
     inspectorName = models.CharField(max_length=30) # stored because the form can be filled out on someone's behalf
     inspectionDate = models.DateField(blank=True, null=True)
     dataEntryDate = models.DateField()
-    claim = models.ForeignKey(Claim,on_delete=models.SET_NULL,null=True)
-    
+    claim = models.ForeignKey(Claim,on_delete=models.SET_NULL,null=True) 
