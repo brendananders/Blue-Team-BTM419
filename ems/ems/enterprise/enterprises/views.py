@@ -39,3 +39,7 @@ def warranties(request):
     warrantiesList=Warranty.objects.order_by('inventory')
     context={'warranties':warrantiesList}
     return render(request, 'enterprises/warranties.html')
+
+def inspections(request):
+    """inspections main menu"""
+    return render(request, 'enterprises/inspections.html')
