@@ -19,13 +19,19 @@
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
+                <div class="navbar-nav">
 
-                <a class="nav-link active" aria-current="page" href="{% url 'enterprises:index'%}">Home</a>
-               
-    
+                    <!-- <a class="nav-link active" aria-current="page" href="{% url 'enterprises:index'%}">Home</a> -->
+                </div>           
             </div>
-            </div>
+            {% if user.is_authenticated %}
+                Hello, {{ user.username }}. 
+                <a href="{% url 'users:logout' %}"><button class="btn btn-outline-primary" style="margin-left: 1.5em;">Log out</button></a>
+            {% else %}
+                <a href="{% url 'users:register' %}"><button class="btn btn-outline-primary" style="margin-left: 1em;">Register</button></a> 
+                <a href="{% url 'users:login' %}"><button class="btn btn-outline-primary" style="margin-left: 1em;">Log in</button></a>
+            {% endif %}
+
         </div>
     </nav>
 </body>  

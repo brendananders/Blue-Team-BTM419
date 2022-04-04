@@ -10,7 +10,7 @@
         {% csrf_token %}     
         {{ form.as_p }}     
     <button name="submit" class="btn btn-primary">Submit</button>   
-    <button href="#" class="btn btn-outline-primary">Cancel</button>    
+    <button href="{% url 'enterprises:claimsIndex' %}" class="btn btn-outline-primary">Cancel</button>    
     </form>
 
 </div>

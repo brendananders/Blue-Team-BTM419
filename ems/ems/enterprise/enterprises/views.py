@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from .models import Claim, Warranty
 from .forms import ClaimForm
+from django.contrib.auth.decorators import login_required
+
 
 
 # Create your views here.
@@ -12,12 +14,14 @@ def claims(request):
     """claims main menu"""
     return render(request, 'enterprises/claims.html')
 
+@login_required
 def claimsIndex(request):
     """claims index"""
     claimsList=Claim.objects.order_by('claimDate')
     context={'claimsIndex':claimsList}
     return render(request, 'enterprises/claimsIndex.html')
     
+@login_required
 def newClaim(request):
     """Add a new claim."""
     if request.method != 'POST':
@@ -34,6 +38,7 @@ def newClaim(request):
     context = {'form': form}
     return render(request, 'enterprises/newClaim.html', context)
 
+@login_required
 def warranties(request):
     """claims index"""
     warrantiesList=Warranty.objects.order_by('inventory')
