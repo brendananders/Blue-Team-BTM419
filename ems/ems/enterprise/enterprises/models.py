@@ -40,3 +40,4 @@ class Inspection(models.Model):
     inspectionDate = models.DateField(blank=True, null=True)
     dataEntryDate = models.DateField()
     claim = models.ForeignKey(Claim,on_delete=models.SET_NULL,null=True)
+    
