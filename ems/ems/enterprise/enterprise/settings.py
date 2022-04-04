@@ -34,6 +34,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     # My Apps
     'enterprises',
+    'users',
     
     'django.contrib.admin',
     'django.contrib.auth',
@@ -128,5 +129,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # My Apps:
 
+# My Settings
+LOGIN_URL = 'users:login'
 
 STATICFILES_DIRS = [join(BASE_DIR, 'static')]
