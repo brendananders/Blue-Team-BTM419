@@ -4,6 +4,11 @@
 
 
 <body>
+    <div>
+        <a class="btn btn-info left" href="{% url 'enterprises:inspectionCalendar' %}?{{ prev_month }}"> Previous Month </a>
+        <a class="btn btn-info right" href="{% url 'enterprises:inspectionCalendar' %}?{{ next_month }}"> Next Month </a>
+        <a class="btn btn-info right" href="{% url 'enterprises:event' %}"> New Event </a>
+    </div>
     <container>
         <div>
             {{ calendar }}
