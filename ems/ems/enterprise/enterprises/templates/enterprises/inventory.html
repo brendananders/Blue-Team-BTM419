@@ -14,20 +14,57 @@
 
 <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
 
-<header><font size="14">Inventory</font></header>
-<br /> 
-<br /> 
 
-<div style="width:250px;height:30px;border:1px solid #000; ">Name Search</div>
+<div class="container">
+  <h1 style="font-weight: bold; text-align: center;">Inventory</h1>
 <br /> 
+<br /> 
+<div class="row">
+  <div class="col-2">
+    <form>
+        <div class="form-group">
+            <input  class="form-control" placeholder="Search name">
+        </div>
+    </form>
+    
+
+</div>
+<div class="col-1">
+    <button class="btn btn-outline-primary">Search</button>
+</div>
+<div class="col-3">
+  <form>
+      <div class="form-group">
+          <input  class="form-control" placeholder="Search Serial Number">
+      </div>
+  </form>
+</div>
+<div class="col-1">
+  <button class="btn btn-outline-primary">Search</button>
+</div>
+<div class="col-3">
+  <form>
+      <div class="form-group">
+          <input  class="form-control" placeholder="Search Dealership">
+      </div>
+  </form>
+</div>
+<div class="col-1">
+  <button class="btn btn-outline-primary">Search</button>
+</div>
+<!-- <div class="col-6"></div>
+  <div style="width:250px;height:30px;border:1px solid #000; ">Name Search</div>
+
 <div style="width:250px;height:30px;border:1px solid #000; ">Serial Number Search</div>
-<br /> 
+
 <div style="width:250px;height:30px;border:1px solid #000; ">Dealership Search</div>
+</div> -->
+  
 
 <br /> 
 <br /> 
 
-<table class="table table-responsive table-hover table-bordered"> 
+<table class="table table-responsive table-hover table-striped" style="width:100%"> 
 
 <thead>
     <tr>
@@ -249,6 +286,8 @@
 
   </tbody>
 </table>
+</div>
+
 
 
 {% endblock content %} 
