@@ -5,12 +5,14 @@ from .models import Claim, Warranty, Inspection
 class ClaimForm(forms.ModelForm):
     class Meta:
         model = Claim
-        fields = ['claimDate']
-        labels = {'claimDate': 'Date of Claim:'}
+        fields = ['claimDate', 'warranty', 'status', 'approvalDate']
+        labels = {
+            'claimDate': 'Date of Claim:',
+            'warranty': 'Warranty Number:',
+            'status': 'Status:',
+            'approvalDate': 'Approval Date:'
+            }
 
-
-        # , 'warranty', 'status'
-        # , 'warranty': 'Warranty Number:', 'status': 'Status:'
 
 class InspectionForm(forms.ModelForm):
     class Meta:

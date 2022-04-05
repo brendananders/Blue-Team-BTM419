@@ -1,0 +1,254 @@
+{% extends "enterprises/base.html" %}
+{% block content %} 
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js">
+</script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js">
+</script>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
+
+<link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+
+<header><font size="14">Inventory</font></header>
+<br /> 
+<br /> 
+
+<div style="width:250px;height:30px;border:1px solid #000; ">Name Search</div>
+<br /> 
+<div style="width:250px;height:30px;border:1px solid #000; ">Serial Number Search</div>
+<br /> 
+<div style="width:250px;height:30px;border:1px solid #000; ">Dealership Search</div>
+
+<br /> 
+<br /> 
+
+<table class="table table-responsive table-hover table-bordered"> 
+
+<thead>
+    <tr>
+      <th >Name</th>
+      <th >Quantity</th>
+      <th >UPC Code</th>
+      <th >Dealership</th>
+    </tr>
+  </thead>
+  
+  <tbody>
+    <tr>
+      <td><span class="clickable" data-toggle="collapse" id="row1" data-target=".row1"><i class="fas fa-plus" id="test"></i>&nbsp</span>Inventory Item 1</td>
+      <td>3</td>
+      <td>159132357</td>
+      <td>Dealer1</td>
+
+    </tr>
+    
+    <tr class="collapse row1">
+        <th> Serial Number</th>
+        <th >Name</th>
+        <th >Brand</th>
+      </tr>
+
+    <tr class="collapse row1">
+      <td>12345678912</td>
+      <td>Inventory Item 1</td>
+      <td>Brand-L</td>
+    </tr>
+
+    <tr class="collapse row1">
+        <td>78945612332</td>
+        <td>Inventory Item 1</td>
+        <td>Brand-L</td>
+    </tr>
+
+    <tr class="collapse row1">
+        <td>74185296355</td>
+        <td>Inventory Item 1</td>
+        <td>Brand-J</td>
+    </tr>
+
+    <tr>
+      <td><span class="clickable" data-toggle="collapse" data-target=".row2"><i class="fas fa-plus" id="test"></i>&nbsp</span>Inventory Item 1</td>
+      <td>7</td>
+      <td>789654123</td>
+      <td>Dealer2</td>
+    </tr>
+
+    <tr class="collapse row2">
+        <th> Serial Number</th>
+        <th >Name</th>
+        <th >Brand</th>
+      </tr>
+
+    <tr class="collapse row2">
+        <td>52846515944</td>
+        <td>Inventory Item 1</td>
+        <td>Brand-J</td>
+
+    </tr>
+
+    <tr class="collapse row2">
+        <td>52456845744</td>
+        <td>Inventory Item 1</td>
+        <td>Brand-F</td>
+
+    </tr>
+
+    <tr class="collapse row2">
+        <td>78451235689</td>
+        <td>Inventory Item 1</td>
+        <td>Brand-L</td>
+
+    </tr>
+
+    <tr class="collapse row2">
+        <td>75321598745</td>
+        <td>Inventory Item 1</td>
+        <td>Brand-L</td>
+
+    </tr>
+
+    <tr class="collapse row2">
+        <td>45612378945</td>
+        <td>Inventory Item 1</td>
+        <td>Brand-J</td>
+
+    </tr>
+
+    <tr class="collapse row2">
+        <td>85214796325</td>
+        <td>Inventory Item 1</td>
+        <td>Brand-F</td>
+
+    </tr>
+
+    <tr class="collapse row2">
+        <td>75148629355</td>
+        <td>Inventory Item 1</td>
+        <td>Brand-F</td>
+
+    </tr>
+
+    <tr>
+      <td><span class="clickable" data-toggle="collapse" data-target=".row3"><i class="fas fa-plus" id="test"></i>&nbsp</span>Inventory Item 2</td>
+      <td>10</td>
+      <td>458963217</td>
+      <td>Dealer1</td>
+    </tr>
+
+    <tr class="collapse row3">
+        <th> Serial Number</th>
+        <th >Name</th>
+        <th >Brand</th>
+      </tr>
+
+    <tr class="collapse row3">
+        <td>84579612358</td>
+        <td>Inventory Item 2</td>
+        <td>W-stock</td>
+    </tr>
+
+    <tr class="collapse row3">
+        <td>54871201145</td>
+        <td>Inventory Item 2</td>
+        <td>W-stock</td>
+
+    </tr>
+
+    <tr class="collapse row3">
+        <td>65123489722</td>
+        <td>Inventory Item 2</td>
+        <td>W-stock</td>
+    </tr>
+
+    <tr class="collapse row3">
+        <td>11002354786</td>
+        <td>Inventory Item 2</td>
+        <td>W-stock</td>
+
+    </tr>
+
+    <tr class="collapse row3">
+        <td>21311224457</td>
+        <td>Inventory Item 2</td>
+        <td>G-stock</td>
+    </tr>
+
+    <tr class="collapse row3">
+        <td>55544421789</td>
+        <td>Inventory Item 2</td>
+        <td>G-stock</td>
+    </tr>
+
+    <tr class="collapse row3">
+        <td>74125896358</td>
+        <td>Inventory Item 2</td>
+        <td>G-stock</td>
+    </tr>
+
+    <tr class="collapse row3">
+        <td>44225517638</td>
+        <td>Inventory Item 2</td>
+        <td>G-stock</td>
+    </tr>
+
+    <tr class="collapse row3">
+        <td>52488661201</td>
+        <td>Inventory Item 2</td>
+        <td>G-stock</td>
+    </tr>
+
+    <tr class="collapse row3">
+        <td>75142336684</td>
+        <td>Inventory Item 2</td>
+        <td>X-stock</td>
+    </tr>
+
+
+    <tr>
+      <td><span class="clickable" data-toggle="collapse" data-target=".row4"><i class="fas fa-plus" id="test"></i>&nbsp</span>Inventory Item 3</td>
+      <td>4</td>
+      <td>564223315</td>
+      <td>Dealer3</td>
+    </tr>
+
+    <tr class="collapse row4">
+        <th> Serial Number</th>
+        <th >Name</th>
+        <th >Brand</th>
+      </tr>
+
+    <tr class="collapse row4">
+        <td>32116548978</td>
+        <td>Inventory Item 3</td>
+        <td>Alpha-K</td>
+
+    </tr>
+
+    <tr class="collapse row4">
+        <td>55441122336</td>
+        <td>Inventory Item 3</td>
+        <td>Alpha-K</td>
+      </tr>
+
+      <tr class="collapse row4">
+        <td>12345698741</td>
+        <td>Inventory Item 3</td>
+        <td>Alpha-K</td>
+      </tr>
+
+      <tr class="collapse row4">
+        <td>75315984267</td>
+        <td>Inventory Item 3</td>
+        <td>Alpha-K</td>
+      </tr>
+
+  </tbody>
+</table>
+
+
+{% endblock content %} 
