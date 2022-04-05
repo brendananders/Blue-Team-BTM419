@@ -15,5 +15,10 @@ class ClaimForm(forms.ModelForm):
 class InspectionForm(forms.ModelForm):
     class Meta:
         model = Inspection
-        fields = ['inspectionDate']
-        labels = {'inspectionDate': 'Date of Inspection:'}
+        fields = ['inspectionDate', 'inspectorName', 'dataEntryDate', 'claim']
+        labels = {
+            'inspectionDate': 'Date of Inspection:',
+            'inspectorName': 'Inspector Name:',
+            'dataEntryDate': 'Date of Data Entry:',
+            'claim': 'Claim:'
+        }
