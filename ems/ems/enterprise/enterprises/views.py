@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Claim, Warranty
+from .models import Claim, Warranty, Inspection
 from .forms import ClaimForm
 from django.contrib.auth.decorators import login_required
 
@@ -48,3 +48,10 @@ def warranties(request):
 def inspections(request):
     """inspections main menu"""
     return render(request, 'enterprises/inspections.html')
+
+@login_required
+def inspectionsIndex(request):
+    """inspections index"""
+    inspectionsList=Inspection.objects.order_by('inspectionDate')
+    context={'inspectionsIndex':inspectionsList}
+    return render(request, 'enterprises/inspectionsIndex.html')

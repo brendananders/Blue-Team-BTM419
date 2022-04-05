@@ -11,16 +11,17 @@
     <div class = row>
         <div class="col-2"></div>
         <div class="col-8">
-                <button type="button" class="btn btn-primary btm-block" style="width:100%">Inventory</button>
+                <button type="button" class="btn btn-primary btn-lg btn-block" style="width:100%">Inventory</button>
         </div>
         <div class="col-2"></div>
     </div>
+    
     <br>
     <div class = row>
         <div class="col-2"></div>
         <div class="col-8">
                 <a href="{% url 'enterprises:claims' %}">
-                <button type="button" class="btn btn-primary btm-block" style="width:100%">Claims</button>
+                <button type="button" class="btn btn-primary btn-lg btn-block" style="width:100%">Claims</button>
         </div>
         <div class="col-2"></div>
     </div>
@@ -28,7 +29,8 @@
 <div class = row>
     <div class="col-2"></div>
     <div class="col-8">
-            <button type="button" class="btn btn-primary btm-block" style="width:100%">Inspections</button>
+            <a href="{% url 'enterprises:inspections' %}">
+            <button type="button" class="btn btn-primary btn-lg btn-block" style="width:100%">Inspections</button>
     </div>
     <div class="col-2"></div>
 </div>

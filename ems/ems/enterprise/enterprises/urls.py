@@ -11,4 +11,5 @@ urlpatterns = [
     path('newClaim/', views.newClaim, name='newClaim'),
     path('warranties/', views.warranties, name='warranties'),
     path('inspections/', views.inspections, name='inspections'),
+    path('inspectionsIndex/', views.inspectionsIndex, name='inspectionsIndex'),
 ]
