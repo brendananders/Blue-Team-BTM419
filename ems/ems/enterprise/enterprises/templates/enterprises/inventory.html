@@ -1,3 +1,6 @@
+{% extends "enterprises/base.html" %}
+{% block content %} 
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js">
 </script>
 
@@ -11,8 +14,18 @@
 
 <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
 
-<center>
-<caption>Inventory</caption>
+<header><font size="14">Inventory</font></header>
+<br /> 
+<br /> 
+
+<div style="width:250px;height:30px;border:1px solid #000; ">Name Search</div>
+<br /> 
+<div style="width:250px;height:30px;border:1px solid #000; ">Serial Number Search</div>
+<br /> 
+<div style="width:250px;height:30px;border:1px solid #000; ">Dealership Search</div>
+
+<br /> 
+<br /> 
 
 <table class="table table-responsive table-hover table-bordered"> 
 
@@ -237,4 +250,5 @@
   </tbody>
 </table>
 
-</center>
+
+{% endblock content %} 
