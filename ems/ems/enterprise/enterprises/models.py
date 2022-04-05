@@ -47,3 +47,10 @@ class Inspection(models.Model):
         
     def __str__(self):
         return(str(self.pk))  
+
+# copied from Hui Wenteo https://www.huiwenteo.com/normal/2018/07/24/django-calendar.html
+class Event(models.Model):
+    title = models.CharField(max_length=200)
+    description = models.TextField()
+    start_time = models.DateTimeField()
+    end_time = models.DateTimeField()

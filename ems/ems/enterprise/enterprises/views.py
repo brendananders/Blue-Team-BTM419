@@ -86,7 +86,7 @@ def newInspection(request):
 # copied from Hui Wenteo https://www.huiwenteo.com/normal/2018/07/24/django-calendar.html
 
 class CalendarView(generic.ListView):
-    model = Inspection
+    model = Event
     template_name = 'enterprises/inspectionCalendar.html'
 
     def get_context_data(self, **kwargs):
