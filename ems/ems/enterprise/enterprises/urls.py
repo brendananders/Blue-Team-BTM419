@@ -12,4 +12,5 @@ urlpatterns = [
     path('warranties/', views.warranties, name='warranties'),
     path('inspections/', views.inspections, name='inspections'),
     path('inspectionsIndex/', views.inspectionsIndex, name='inspectionsIndex'),
+    path('newInspection/', views.newInspection, name='newInspection'),
 ]

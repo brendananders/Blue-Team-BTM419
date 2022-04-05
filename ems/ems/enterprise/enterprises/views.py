@@ -55,3 +55,20 @@ def inspectionsIndex(request):
     inspectionsList=Inspection.objects.order_by('inspectionDate')
     context={'inspectionsIndex':inspectionsList}
     return render(request, 'enterprises/inspectionsIndex.html')
+
+@login_required
+def newInspection(request):
+    """Add a new inspection."""
+    if request.method != 'POST':
+        # No data submitted; create a blank form.
+        form = ClaimForm()
+    else:
+        # POST data submitted; process data.
+        form = ClaimForm(data=request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('enterprises:inspectionsIndex')
+
+    # Display a blank or invalid form.
+    context = {'form': form}
+    return render(request, 'enterprises/newInspection.html', context)
