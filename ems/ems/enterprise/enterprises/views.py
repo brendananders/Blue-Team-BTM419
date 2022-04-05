@@ -16,6 +16,10 @@ def index(request):
     """The home page for Learning Log."""
     return render(request, 'enterprises/index.html')
 
+def inventory(request):
+    """Inventory Page"""
+    return render(request, 'enterprises/inventory.html')
+
 def claims(request):
     """claims main menu"""
     return render(request, 'enterprises/claims.html')

@@ -10,6 +10,7 @@ urlpatterns = [
     path('claims/', views.claims, name='claims'),
     path('claimsIndex/', views.claimsIndex, name='claimsIndex'),
     path('newClaim/', views.newClaim, name='newClaim'),
+    path('inventory/', views.inventory, name='inventory'),
     path('warranties/', views.warranties, name='warranties'),
     path('inspections/', views.inspections, name='inspections'),
     path('inspectionsIndex/', views.inspectionsIndex, name='inspectionsIndex'),
