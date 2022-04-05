@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import *
-from .forms import ClaimForm
+from .forms import ClaimForm, InspectionForm
 from django.contrib.auth.decorators import login_required
 # copied from Hui Wenteo https://www.huiwenteo.com/normal/2018/07/24/django-calendar.html
 from datetime import datetime
@@ -67,10 +67,10 @@ def newInspection(request):
     """Add a new inspection."""
     if request.method != 'POST':
         # No data submitted; create a blank form.
-        form = ClaimForm()
+        form = InspectionForm()
     else:
         # POST data submitted; process data.
-        form = ClaimForm(data=request.POST)
+        form = InspectionForm(data=request.POST)
         if form.is_valid():
             form.save()
             return redirect('enterprises:inspectionsIndex')
