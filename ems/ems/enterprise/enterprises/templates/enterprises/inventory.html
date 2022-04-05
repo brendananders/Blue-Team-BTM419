@@ -14,27 +14,34 @@
 
 <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
 
-<header><font size="14">Inventory</font></header>
+<h1 style="font-weight: bold; text-align: center;">Inventory</h1>
 <br /> 
-<br /> 
+<div class="row">
+  <div class="col-3">
+      <form>
+          <div class="form-group">
+              <input  class="form-control" placeholder="Search inventory">
+          </div>
+      </form>
+  </div>
+  <div class="col-1">
+      <button class="btn btn-outline-primary">Search</button>
+  </div>
+  <div class="col-6"></div>
 
-<div style="width:250px;height:30px;border:1px solid #000; ">Name Search</div>
-<br /> 
-<div style="width:250px;height:30px;border:1px solid #000; ">Serial Number Search</div>
-<br /> 
-<div style="width:250px;height:30px;border:1px solid #000; ">Dealership Search</div>
+</div>
+  
 
-<br /> 
 <br /> 
 
 <table class="table table-responsive table-hover table-bordered"> 
 
 <thead>
     <tr>
-      <th >Name</th>
-      <th >Quantity</th>
-      <th >UPC Code</th>
-      <th >Dealership</th>
+      <th scope="col">Name</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">UPC Code</th>
+      <th scope="col">Dealership</th>
     </tr>
   </thead>
   
