@@ -1,0 +1,41 @@
+{% extends "enterprises/base.html" %}
+{% block content %} 
+<div class="container">
+    <div class="row">
+        <h1 style="font-weight: bold; text-align: center;">Inspections</h1>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-10"><p>search bar function will be right here:</p></div>
+        <div class="col-2">
+            <a href="{% url 'enterprises:newInspection' %}">
+                <button class="btn btn-outline-primary">Create New Inspection</button>
+            </a>
+            
+        </div>
+        
+    </div>
+    <table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Inspection ID</th>
+            <th scope="col">Inspection Date</th>
+            <th scope="col">Inspector Name</th>
+            <th scope="col">Data Entry Date</th>
+            <th scope="col">Claim</th>
+        </tr> 
+    </thead>
+    <tbody>
+        {% for inspection in inspections %}  
+            <tr>
+                {{inspection}}
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+
+
+
+
+{% endblock content %} 

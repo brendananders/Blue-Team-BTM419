@@ -2,19 +2,20 @@
 {% block content %}
 
 <div class="container">
+    
     <div class="row">
-        <h1 style="font-weight: bold; text-align: center;">Add New Claim</h1>
+        <h1 style="font-weight: bold; text-align: center;">Add New Inspection</h1>
     </div>
+    <br>
     <div class="d-flex justify-content-center">
-        <form action="{% url 'enterprises:newClaim' %}" method='post' class="form-group">
+        <form action="{% url 'enterprises:newInspection' %}" method='post' class="form-group">
     
             {% csrf_token %}     
             {{ form.as_p }}     
             <button name="submit" class="btn btn-primary">Submit</button>   
-            <button href="{% url 'enterprises:claimsIndex' %}" class="btn btn-outline-primary">Cancel</button>
+            <button href="{% url 'enterprises:inspectionsIndex' %}" class="btn btn-outline-primary">Cancel</button>    
         </form>
     </div>
-   
     
 
 </div>
