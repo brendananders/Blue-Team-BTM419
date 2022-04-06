@@ -43,63 +43,16 @@
     <tbody>
         {% for inspection in inspections %}  
             <tr>
-                {{inspection}}
+                <td>{{inspection.pk}}</td>
+                <td>{{inspection.inspectionDate}}</td>
+                <td>{{inspection.inspectorName}}</td>
+                <td>{{inspection.dataEntryDate}}</td>
+                <td>{{inspection.claim}}</td>
             </tr>
         {% endfor %} 
 
     </tbody>
 </table>
 </div>
-
-<ul>
-    {% for inspection in inspections %} 
-    <li>
-        {{inspection}}
-    </li>
-    {% endfor %} 
-</ul>
-
-
-        <!--
-        <tr>
-            <td>1</td>
-            <td>04-01-2022</td>
-            <td>Aaron Smith</td>
-            <td>04-02-2022</td>
-            <td>1</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>03-31-2022</td>
-            <td>Amanda Brown</td>
-            <td>04-03-2022</td>
-            <td>1</td>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>04-03-2022</td>
-            <td>Aaron Smith</td>
-            <td>04-04-2022</td>
-            <td>2</td>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>04-04-2022</td>
-            <td>Bob Parr</td>
-            <td>04-05-2022</td>
-            <td>3</td>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>04-05-2022</td>
-            <td>Bob Parr</td>
-            <td>04-05-2022</td>
-            <td>4</td>
-        </tr>
-        -->
-
-
-
-
 
 {% endblock content %} 
