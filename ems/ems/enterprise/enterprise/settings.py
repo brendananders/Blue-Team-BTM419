@@ -35,6 +35,9 @@ INSTALLED_APPS = [
     # My Apps
     'enterprises',
     'users',
+
+    # added for searching
+    'django_filters',
     
     'django.contrib.admin',
     'django.contrib.auth',

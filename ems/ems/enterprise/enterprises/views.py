@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import *
 from .forms import ClaimForm, InspectionForm, EventForm
 from django.contrib.auth.decorators import login_required
+from .filters import InspectionFilter
 # copied from Hui Wenteo https://www.huiwenteo.com/normal/2018/07/24/django-calendar.html
 from datetime import datetime, timedelta, date
 from django.http import HttpResponse, HttpResponseRedirect
@@ -10,6 +11,7 @@ from django.utils.safestring import mark_safe
 from .utils import Calendar
 from django.urls import reverse
 import calendar
+
 
 
 
