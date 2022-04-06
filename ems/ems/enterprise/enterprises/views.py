@@ -30,8 +30,8 @@ def claims(request):
 def claimsIndex(request):
     """claims index"""
     claimsList=Claim.objects.order_by('claimDate')
-    context={'claimsIndex':claimsList}
-    return render(request, 'enterprises/claimsIndex.html')
+    context={'claims':claimsList}
+    return render(request, 'enterprises/claimsIndex.html', context)
     
 @login_required
 def newClaim(request):
@@ -55,7 +55,7 @@ def warranties(request):
     """claims index"""
     warrantiesList=Warranty.objects.order_by('inventory')
     context={'warranties':warrantiesList}
-    return render(request, 'enterprises/warranties.html')
+    return render(request, 'enterprises/warranties.html', context)
 
 def inspections(request):
     """inspections main menu"""
@@ -65,8 +65,8 @@ def inspections(request):
 def inspectionsIndex(request):
     """inspections index"""
     inspectionsList=Inspection.objects.order_by('inspectionDate')
-    context={'inspectionsIndex':inspectionsList}
-    return render(request, 'enterprises/inspectionsIndex.html')
+    context={'inspections':inspectionsList}
+    return render(request, 'enterprises/inspectionsIndex.html', context)
 
 @login_required
 def newInspection(request):

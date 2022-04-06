@@ -1,5 +1,7 @@
 {% extends "enterprises/base.html" %}
 {% block content %} 
+
+
 <div class="container">
     <div class="row">
         <h1 style="font-weight: bold; text-align: center;">Inspections</h1>
@@ -48,6 +50,16 @@
     </tbody>
 </table>
 </div>
+
+<ul>
+    {% for inspection in inspections %} 
+    <li>
+        {{inspection}}
+    </li>
+    {% endfor %} 
+</ul>
+
+
         <!--
         <tr>
             <td>1</td>
