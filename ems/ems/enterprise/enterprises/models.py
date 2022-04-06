@@ -8,16 +8,25 @@ class Dealership(models.Model):
     address = models.CharField(max_length=80)
     phoneNumber = models.IntegerField()
 
+    def __str__(self):
+        return(str(self.name))
+
 class Inventory(models.Model):
     serialNumber = models.IntegerField()
     upcCode = models.IntegerField()
     name = models.CharField(max_length=30)
     dealership = models.ForeignKey(Dealership,on_delete=models.SET_NULL,null=True)
 
+    def __str__(self):
+        return(str(self.serialNumber))
+
 class Warranty(models.Model):
     inventory = models.ForeignKey(Inventory,on_delete=models.SET_NULL,null=True)
     brand = models.CharField(max_length=30)
     name = models.CharField(max_length=30)
+
+    def __str__(self):
+        return(str(self.pk))
 
 class Claim(models.Model):
     claimDate = models.DateField()
