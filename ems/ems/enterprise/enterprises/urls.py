@@ -17,4 +17,5 @@ urlpatterns = [
     path('newInspection/', views.newInspection, name='newInspection'),
     path('admin/', admin.site.urls),
     path('inspectionCalendar/', views.CalendarView.as_view(), name='inspectionCalendar'),
+    path('event/', views.event, name='event'),
 ]

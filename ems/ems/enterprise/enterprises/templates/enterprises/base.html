@@ -7,14 +7,15 @@
     <title>Enterprise Management System</title>  
 
     {% load static %}  
-    <link rel='stylesheet' href="{% static 'bootstrap/css/bootstrap.css' %}" >  
+    <link rel='stylesheet' href="{% static 'bootstrap/css/bootstrap.css' %}" >
     <script src="{% static 'bootstrap.js' %}"></script>
 
 </head>  
 <body>  
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'enterprises:index'%}">Consumer Car Care</a>
+            
+            <a class="navbar-brand" href="{% url 'enterprises:index'%}"><img src="/static/C3LogoSmall.png" alt="C3 Logo">Consumer Car Care</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
