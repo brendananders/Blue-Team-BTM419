@@ -66,8 +66,14 @@ def inspections(request):
 @login_required
 def inspectionsIndex(request):
     """inspections index"""
-    inspectionsList=Inspection.objects.order_by('inspectionDate')
-    context={'inspections':inspectionsList}
+    inspections = Inspection.objects.order_by('inspectionDate')
+    # inspections = Inspection.objects.order_set.all()
+    myFilter = InspectionFilter(request.GET, queryset=inspections)
+    inspections = myFilter.qs
+    context={'inspections':inspections, 'myFilter':myFilter}
+
+    
+
     return render(request, 'enterprises/inspectionsIndex.html', context)
 
 @login_required
