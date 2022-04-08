@@ -38,6 +38,9 @@ INSTALLED_APPS = [
 
     # added for searching
     'django_filters',
+
+    # added for nicer forms
+    'crispy_forms',
     
     'django.contrib.admin',
     'django.contrib.auth',

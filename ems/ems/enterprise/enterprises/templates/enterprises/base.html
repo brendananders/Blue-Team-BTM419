@@ -43,8 +43,8 @@
                 <p style="color: white; margin-top: 1rem; font-size: 20px;">Hello, {{ user.username }}. </p>
                 <a href="{% url 'users:logout' %}"><button class="btn btn-outline-light" style="margin-left: 1.5em; font-size: 20px;">Log out</button></a>
             {% else %}
-                <a href="{% url 'users:register' %}"><button class="btn btn-outline-primary" style="margin-left: 1em; font-size: 20px;">Register</button></a> 
-                <a href="{% url 'users:login' %}"><button class="btn btn-outline-primary" style="margin-left: 1em; font-size: 20px;">Log in</button></a>
+                <!-- <a href="{% url 'users:register' %}"><button class="btn btn-outline-light" style="margin-left: 1em; font-size: 20px;">Register</button></a>  -->
+                <a href="{% url 'users:login' %}"><button class="btn btn-outline-light" style="margin-left: 1em; font-size: 20px;">Log in</button></a>
             {% endif %}
 
         </div>

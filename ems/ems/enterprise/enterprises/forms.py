@@ -13,6 +13,7 @@ class ClaimForm(forms.ModelForm):
             'status': 'Status:',
             'approvalDate': 'Approval Date:'
             }
+        
 
 class InventoryForm(forms.ModelForm):
     class Meta:

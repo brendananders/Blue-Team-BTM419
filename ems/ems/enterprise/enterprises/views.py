@@ -15,6 +15,7 @@ import calendar
 
 
 
+
 # Create your views here.
 def index(request):
     """The home page for Learning Log."""
