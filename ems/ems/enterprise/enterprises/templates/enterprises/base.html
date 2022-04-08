@@ -12,25 +12,39 @@
 
 </head>  
 <body>  
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
         <div class="container-fluid">
             
-            <a class="navbar-brand" href="{% url 'enterprises:index'%}"><img src="/static/C3LogoSmall.png" alt="C3 Logo">Consumer Car Care</a>
+            <a class="navbar-brand" href="{% url 'enterprises:index'%}"><img src="/static/C3LogoSmall-50.png"  alt="C3 Logo"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-
-                    <!-- <a class="nav-link active" aria-current="page" href="{% url 'enterprises:index'%}">Home</a> -->
-                </div>           
+                <ul class="navbar-nav">
+                    <li class="nav-item ">
+                      <a class="nav-link " style="font-size: 20px; color: white;" aria-current="page" href="{% url 'enterprises:index'%}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link " style="font-size: 20px; color: white;" aria-current="page" href="{% url 'enterprises:inventory'%}">Inventory</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link " style="font-size: 20px; color: white;" aria-current="page" href="{% url 'enterprises:claimsIndex'%}">Claims</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link " style="font-size: 20px; color: white;" aria-current="page" href="{% url 'enterprises:warranties'%}">Warranties</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link " style="font-size: 20px; color: white;" aria-current="page" href="{% url 'enterprises:inspections'%}">Inspections</a>
+                    </li>
+                  </ul>
+          
             </div>
             {% if user.is_authenticated %}
-                Hello, {{ user.username }}. 
-                <a href="{% url 'users:logout' %}"><button class="btn btn-outline-primary" style="margin-left: 1.5em;">Log out</button></a>
+                <p style="color: white; margin-top: 1rem; font-size: 20px;">Hello, {{ user.username }}. </p>
+                <a href="{% url 'users:logout' %}"><button class="btn btn-outline-light" style="margin-left: 1.5em; font-size: 20px;">Log out</button></a>
             {% else %}
-                <a href="{% url 'users:register' %}"><button class="btn btn-outline-primary" style="margin-left: 1em;">Register</button></a> 
-                <a href="{% url 'users:login' %}"><button class="btn btn-outline-primary" style="margin-left: 1em;">Log in</button></a>
+                <a href="{% url 'users:register' %}"><button class="btn btn-outline-primary" style="margin-left: 1em; font-size: 20px;">Register</button></a> 
+                <a href="{% url 'users:login' %}"><button class="btn btn-outline-primary" style="margin-left: 1em; font-size: 20px;">Log in</button></a>
             {% endif %}
 
         </div>

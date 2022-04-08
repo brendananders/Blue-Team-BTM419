@@ -31,33 +31,14 @@
         </tr> 
     </thead>
     <tbody>
-        <!-- {% for warranty in warranties %}  
+        {% for warranty in warranties %}  
             <tr>
-                {{warranty}}
+                <td>{{warranty.pk}}</td>
+                <td>{{warranty.inventory}}</td>
+                <td>{{warranty.brand}}</td>
+                <td>{{warranty.name}}</td>
             </tr>
-        {% endfor %} -->
-
-        <tr>
-            <td>3</td>
-            <td>1</td>
-            <td>Example Brand 3</td>
-            <td>Example Name 3</td>
-            
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>2</td>
-            <td>Example Brand 2</td>
-            <td>Example Name 2</td>
-          
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>2</td>
-            <td>Example Brand 1</td>
-            <td>Example Name 1</td>
-          
-        </tr>
+        {% endfor %}
       
     </tbody>
 </table>

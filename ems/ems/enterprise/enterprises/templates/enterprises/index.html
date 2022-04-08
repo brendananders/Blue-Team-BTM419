@@ -1,7 +1,18 @@
 {% extends "enterprises/base.html" %}
 {% block content %}
 <div class="container">
-    <h1 style="font-weight: bold; text-align: center;">Enterprise Management System</h1>
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6 d-flex justify-content-center">
+            <img src="/static/C3LogoMain.png"  alt="C3 Logo">
+        </div>
+        <div class="col-3"></div>
+        
+    </div>
+    <div class="row">
+        <h1 style="font-weight: bold; text-align: center;">Enterprise Management System</h1>
+    </div>
+    
 
 </div>
 
@@ -12,7 +23,7 @@
         <div class="col-2"></div>
         <div class="col-8">
             <a href="{% url 'enterprises:inventory' %}">
-            <button type="button" class="btn btn-primary btn-lg btn-block" style="width:100%">Inventory</button>
+            <button type="button" class="btn btn-outline-secondary btn-lg btn-block" style="width:100%">Inventory</button>
             </a>
         </div>
         <div class="col-2"></div>
@@ -23,7 +34,7 @@
         <div class="col-2"></div>
         <div class="col-8">
                 <a href="{% url 'enterprises:claims' %}">
-                <button type="button" class="btn btn-primary btn-lg btn-block" style="width:100%">Claims</button>
+                <button type="button" class="btn btn-outline-secondary btn-lg btn-block" style="width:100%">Claims</button>
                 </a>
         </div>
         <div class="col-2"></div>
@@ -33,7 +44,7 @@
         <div class="col-2"></div>
         <div class="col-8">
             <a href="{% url 'enterprises:inspectionsIndex' %}">
-            <button type="button" class="btn btn-primary btn-lg btn-block" style="width:100%">Inspections</button>
+            <button type="button" class="btn btn-outline-secondary btn-lg btn-block" style="width:100%">Inspections</button>
             </a>
         </div>
         <div class="col-2"></div>

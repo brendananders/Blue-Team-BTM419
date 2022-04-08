@@ -3,11 +3,19 @@
 
 <br>
 <div class="container">
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6 d-flex justify-content-center">
+            <img src="/static/C3LogoSmall.png"  alt="C3 Logo">
+        </div>
+        <div class="col-3"></div>
+    </div>
+    <br>
     <div class = row>
         <div class="col-2"></div>
         <div class="col-8">
                 <a href="{% url 'enterprises:claimsIndex' %}">
-                <button type="button" class="btn btn-primary btn-lg btm-block" style="width:100%">Claims</button>
+                <button type="button" class="btn btn-outline-secondary btn-lg btm-block" style="width:100%">Claims</button>
                 </a>
         </div>
         <div class="col-2"></div>
@@ -17,7 +25,7 @@
         <div class="col-2"></div>
         <div class="col-8">
                 <a href="{% url 'enterprises:warranties' %}">
-                <button type="button" class="btn btn-primary btn-lg btm-block" style="width:100%">Warranties</button>
+                <button type="button" class="btn btn-outline-secondary btn-lg btm-block" style="width:100%">Warranties</button>
                 </a>
         </div>
         <div class="col-2"></div>

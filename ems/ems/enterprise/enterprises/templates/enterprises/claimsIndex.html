@@ -21,7 +21,7 @@
         <div class="col-6"></div>
         <div class="col-2">
             <a href="{% url 'enterprises:newClaim' %}">
-                <button class="btn btn-outline-primary">Create New Claim</button>
+                <button class="btn btn-outline-secondary">Create New Claim</button>
             </a>
             
         </div>
@@ -38,52 +38,18 @@
         </tr> 
     </thead>
     <tbody>
-        <!-- {% for claim in Claim %}  
+        {% for claim in claims %}  
             <tr>
-                <td>{{claim.id}}</td>
+                <td>{{claim.pk}}</td>
                 <td>{{claim.claimDate}}</td>
                 <td>{{claim.status}}</td>
                 <td>{{claim.approvalDate}}</td>
                 <td>{{claim.warranty}}</td>
             </tr>
-        {% endfor %} -->
+        {% endfor %}
         
         
-        <tr>
-            <td>5</td>
-            <td>04-05-2022</td>
-            <td>Pending</td>
-            <td>--</td>
-            <td>3</td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td>04-02-2022</td>
-            <td>Active</td>
-            <td>--</td>
-            <td>3</td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>04-01-2022</td>
-            <td>Approved</td>
-            <td>04-02-2022</td>
-            <td>2</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>03-31-2022</td>
-            <td>Rejected</td>
-            <td>--</td>
-            <td>1</td>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>03-31-2022</td>
-            <td>Approved</td>
-            <td>04-01-2022</td>
-            <td>1</td>
-        </tr>
+        
     </tbody>
 </table>
 </div>
