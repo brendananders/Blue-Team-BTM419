@@ -2,19 +2,19 @@
 {% block content %}
 
 <div class="container">
-    
     <div class="row">
-        <h1 style="font-weight: bold; text-align: center;">Add New Inspection</h1>
+        <h1 style="font-weight: bold; text-align: center;">Add New Inventory Item</h1>
     </div>
-    <br>
     <div class="d-flex justify-content-center">
-        <form action="{% url 'enterprises:newInspection' %}" method='post' class="form-group">
+        <form action="{% url 'enterprises:newInventory' %}" method='post' class="form-group">
     
             {% csrf_token %}     
             {{ form.as_p }}     
             <button name="submit" class="btn btn-secondary">Submit</button>   
             
+        </form>
     </div>
+   
     
 
 </div>

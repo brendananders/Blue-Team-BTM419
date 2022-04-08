@@ -6,19 +6,15 @@
     </div>
     <br>
     <div class="row">
-        <div class="col-3">
+        <div class="col-10">
             <form>
                 <div class="form-group">
-                    <input  class="form-control" placeholder="Search claim">
+                    {{myFilter.form}}
+                <button class="btn btn-outline-secondary" type="submit">Search</button>
                 </div>
             </form>
             
-        
-        </div>
-        <div class="col-1">
-            <button class="btn btn-outline-primary">Search</button>
-        </div>
-        <div class="col-6"></div>
+       
         <div class="col-2">
             <a href="{% url 'enterprises:newClaim' %}">
                 <button class="btn btn-outline-secondary">Create New Claim</button>

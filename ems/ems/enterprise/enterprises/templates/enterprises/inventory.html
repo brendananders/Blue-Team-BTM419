@@ -20,6 +20,29 @@
 <br /> 
 <br /> 
 <div class="row">
+  <div class="col-3">
+      <form>
+          <div class="form-group">
+              {{myFilter.form}}
+          <button class="btn btn-outline-secondary" type="submit">Search</button>
+          </div>
+      </form>
+      
+  
+  </div>
+  <div class="col-1">
+      
+  </div>
+  <div class="col-6"></div>
+  <div class="col-2">
+      <a href="{% url 'enterprises:newInventory' %}">
+          <button class="btn btn-outline-secondary">Add New Inventory Item</button>
+      </a>
+      
+  </div>
+  
+</div>
+<!-- <div class="row">
   <div class="col-2">
     <form>
         <div class="form-group">
@@ -49,9 +72,11 @@
       </div>
   </form>
 </div>
+
 <div class="col-1">
   <button class="btn btn-outline-primary">Search</button>
 </div>
+</div> -->
 <!-- <div class="col-6"></div>
   <div style="width:250px;height:30px;border:1px solid #000; ">Name Search</div>
 
@@ -63,231 +88,31 @@
 
 <br /> 
 
-<table class="table table-responsive table-hover table-striped" style="width:100%"> 
-
+<table class="table  table-striped" style="width:100%"> 
+<!-- table-responsive table-hover -->
 <thead>
     <tr>
       <th scope="col">Name</th>
-      <th scope="col">Quantity</th>
+      <th scope="col">Serial Number</th>
       <th scope="col">UPC Code</th>
       <th scope="col">Dealership</th>
     </tr>
   </thead>
   
   <tbody>
+    {% for inventory in inventories %}  
+            <tr>
+                <td>{{inventory.name}}</td>
+                <td>{{inventory.serialNumber}}</td>
+                <td>{{inventory.upcCode}}</td>
+                <td>{{inventory.dealership}}</td>
+            </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
     
-    <tr>
-      <td><span class="clickable" data-toggle="collapse" id="row1" data-target=".row1"><i class="fas fa-plus" id="test"></i>&nbsp</span>Inventory Item 1</td>
-      <td>3</td>
-      <td>159132357</td>
-      <td>Dealer1</td>
-
-    </tr>
     
-    <tr class="collapse row1">
-        <th> Serial Number</th>
-        <th >Name</th>
-        <th >Brand</th>
-      </tr>
-
-    <tr class="collapse row1">
-      <td>12345678912</td>
-      <td>Inventory Item 1</td>
-      <td>Brand-L</td>
-    </tr>
-
-    <tr class="collapse row1">
-        <td>78945612332</td>
-        <td>Inventory Item 1</td>
-        <td>Brand-L</td>
-    </tr>
-
-    <tr class="collapse row1">
-        <td>74185296355</td>
-        <td>Inventory Item 1</td>
-        <td>Brand-J</td>
-    </tr>
-
-    <tr>
-      <td><span class="clickable" data-toggle="collapse" data-target=".row2"><i class="fas fa-plus" id="test"></i>&nbsp</span>Inventory Item 1</td>
-      <td>7</td>
-      <td>789654123</td>
-      <td>Dealer2</td>
-    </tr>
-
-    <tr class="collapse row2">
-        <th> Serial Number</th>
-        <th >Name</th>
-        <th >Brand</th>
-      </tr>
-
-    <tr class="collapse row2">
-        <td>52846515944</td>
-        <td>Inventory Item 1</td>
-        <td>Brand-J</td>
-
-    </tr>
-
-    <tr class="collapse row2">
-        <td>52456845744</td>
-        <td>Inventory Item 1</td>
-        <td>Brand-F</td>
-
-    </tr>
-
-    <tr class="collapse row2">
-        <td>78451235689</td>
-        <td>Inventory Item 1</td>
-        <td>Brand-L</td>
-
-    </tr>
-
-    <tr class="collapse row2">
-        <td>75321598745</td>
-        <td>Inventory Item 1</td>
-        <td>Brand-L</td>
-
-    </tr>
-
-    <tr class="collapse row2">
-        <td>45612378945</td>
-        <td>Inventory Item 1</td>
-        <td>Brand-J</td>
-
-    </tr>
-
-    <tr class="collapse row2">
-        <td>85214796325</td>
-        <td>Inventory Item 1</td>
-        <td>Brand-F</td>
-
-    </tr>
-
-    <tr class="collapse row2">
-        <td>75148629355</td>
-        <td>Inventory Item 1</td>
-        <td>Brand-F</td>
-
-    </tr>
-
-    <tr>
-      <td><span class="clickable" data-toggle="collapse" data-target=".row3"><i class="fas fa-plus" id="test"></i>&nbsp</span>Inventory Item 2</td>
-      <td>10</td>
-      <td>458963217</td>
-      <td>Dealer1</td>
-    </tr>
-
-    <tr class="collapse row3">
-        <th> Serial Number</th>
-        <th >Name</th>
-        <th >Brand</th>
-      </tr>
-
-    <tr class="collapse row3">
-        <td>84579612358</td>
-        <td>Inventory Item 2</td>
-        <td>W-stock</td>
-    </tr>
-
-    <tr class="collapse row3">
-        <td>54871201145</td>
-        <td>Inventory Item 2</td>
-        <td>W-stock</td>
-
-    </tr>
-
-    <tr class="collapse row3">
-        <td>65123489722</td>
-        <td>Inventory Item 2</td>
-        <td>W-stock</td>
-    </tr>
-
-    <tr class="collapse row3">
-        <td>11002354786</td>
-        <td>Inventory Item 2</td>
-        <td>W-stock</td>
-
-    </tr>
-
-    <tr class="collapse row3">
-        <td>21311224457</td>
-        <td>Inventory Item 2</td>
-        <td>G-stock</td>
-    </tr>
-
-    <tr class="collapse row3">
-        <td>55544421789</td>
-        <td>Inventory Item 2</td>
-        <td>G-stock</td>
-    </tr>
-
-    <tr class="collapse row3">
-        <td>74125896358</td>
-        <td>Inventory Item 2</td>
-        <td>G-stock</td>
-    </tr>
-
-    <tr class="collapse row3">
-        <td>44225517638</td>
-        <td>Inventory Item 2</td>
-        <td>G-stock</td>
-    </tr>
-
-    <tr class="collapse row3">
-        <td>52488661201</td>
-        <td>Inventory Item 2</td>
-        <td>G-stock</td>
-    </tr>
-
-    <tr class="collapse row3">
-        <td>75142336684</td>
-        <td>Inventory Item 2</td>
-        <td>X-stock</td>
-    </tr>
-
-
-    <tr>
-      <td><span class="clickable" data-toggle="collapse" data-target=".row4"><i class="fas fa-plus" id="test"></i>&nbsp</span>Inventory Item 3</td>
-      <td>4</td>
-      <td>564223315</td>
-      <td>Dealer3</td>
-    </tr>
-
-    <tr class="collapse row4">
-        <th> Serial Number</th>
-        <th >Name</th>
-        <th >Brand</th>
-      </tr>
-
-    <tr class="collapse row4">
-        <td>32116548978</td>
-        <td>Inventory Item 3</td>
-        <td>Alpha-K</td>
-
-    </tr>
-
-    <tr class="collapse row4">
-        <td>55441122336</td>
-        <td>Inventory Item 3</td>
-        <td>Alpha-K</td>
-      </tr>
-
-      <tr class="collapse row4">
-        <td>12345698741</td>
-        <td>Inventory Item 3</td>
-        <td>Alpha-K</td>
-      </tr>
-
-      <tr class="collapse row4">
-        <td>75315984267</td>
-        <td>Inventory Item 3</td>
-        <td>Alpha-K</td>
-      </tr>
-
-  </tbody>
-</table>
-</div>
-
 
 
 {% endblock content %} 

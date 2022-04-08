@@ -1,6 +1,6 @@
 #enterprise/forms.py
 from django import forms
-from .models import Claim, Warranty, Inspection, Event
+from .models import Claim, Warranty, Inspection, Event, Inventory
 from django.forms import ModelForm, DateInput
 
 class ClaimForm(forms.ModelForm):
@@ -14,6 +14,16 @@ class ClaimForm(forms.ModelForm):
             'approvalDate': 'Approval Date:'
             }
 
+class InventoryForm(forms.ModelForm):
+    class Meta:
+        model = Inventory
+        fields = ['serialNumber', 'upcCode', 'name', 'dealership']
+        labels = {
+            'serialNumber': 'Serial Number:',
+            'upcCode': 'UPC Code:',
+            'name': 'Name:',
+            'dealership': 'Dealership:'
+            }
 
 class InspectionForm(forms.ModelForm):
     class Meta:

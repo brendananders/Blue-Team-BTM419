@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import *
-from .forms import ClaimForm, InspectionForm, EventForm
+from .forms import ClaimForm, InspectionForm, EventForm, InventoryForm
 from django.contrib.auth.decorators import login_required
-from .filters import InspectionFilter
+from .filters import InspectionFilter, ClaimsFilter, WarrantiesFilter, InventoryFilter
 # copied from Hui Wenteo https://www.huiwenteo.com/normal/2018/07/24/django-calendar.html
 from datetime import datetime, timedelta, date
 from django.http import HttpResponse, HttpResponseRedirect
@@ -22,7 +22,11 @@ def index(request):
 
 def inventory(request):
     """Inventory Page"""
-    return render(request, 'enterprises/inventory.html')
+    inventoryList=Inventory.objects.order_by('name')
+    myFilter = InventoryFilter(request.GET, queryset=inventoryList)
+    inventoryList = myFilter.qs
+    context={'inventories':inventoryList, 'myFilter':myFilter}
+    return render(request, 'enterprises/inventory.html', context)
 
 def claims(request):
     """claims main menu"""
@@ -32,7 +36,10 @@ def claims(request):
 def claimsIndex(request):
     """claims index"""
     claimsList=Claim.objects.order_by('claimDate')
-    context={'claims':claimsList}
+
+    myFilter = ClaimsFilter(request.GET, queryset=claimsList)
+    claimsList = myFilter.qs
+    context={'claims':claimsList, 'myFilter':myFilter}
     return render(request, 'enterprises/claimsIndex.html', context)
     
 @login_required
@@ -53,10 +60,29 @@ def newClaim(request):
     return render(request, 'enterprises/newClaim.html', context)
 
 @login_required
+def newInventory(request):
+    """Add a new claim."""
+    if request.method != 'POST':
+        # No data submitted; create a blank form.
+        form = InventoryForm()
+    else:
+        # POST data submitted; process data.
+        form = InventoryForm(data=request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('enterprises:inventory')
+
+    # Display a blank or invalid form.
+    context = {'form': form}
+    return render(request, 'enterprises/newInventory.html', context)
+
+@login_required
 def warranties(request):
     """claims index"""
     warrantiesList=Warranty.objects.order_by('inventory')
-    context={'warranties':warrantiesList}
+    myFilter = WarrantiesFilter(request.GET, queryset=warrantiesList)
+    warrantiesList = myFilter.qs
+    context={'warranties':warrantiesList, 'myFilter':myFilter}
     return render(request, 'enterprises/warranties.html', context)
 
 def inspections(request):
